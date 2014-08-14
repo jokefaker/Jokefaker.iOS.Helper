@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
   #  summary should be tweet-length, and the description more in depth.
   #
   s.name         = "Jokefaker.iOS.Helper"
-  s.version      = "0.0.3"
+  s.version      = "0.0.4"
   s.summary      = "Some Category And Custom UI."
   s.homepage     = "https://github.com/jokefaker/Jokefaker.iOS.Helper.git"
 
