@@ -35,11 +35,11 @@ Pod::Spec.new do |s|
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  s.source_files  = 'Libs/**/*.{h,m}'
+  #s.source_files  = 'Libs/Category/*.{h,m}'
 
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  s.resources = "Libs/**/*.png"
+  #s.resources = "Libs/**/*.png"
 
   # ――― Project Linking ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   # s.frameworks = 'SomeFramework', 'AnotherFramework'
@@ -48,5 +48,14 @@ Pod::Spec.new do |s|
 
   # ――― Project Settings ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   s.requires_arc = true
+  # ...
 
+  s.subspec 'Category' do |Category|
+    Category.source_files  = 'Libs/Category/*.{h,m}'
+  end
+  s.subspec 'CustomUI' do |CustomUI|
+    CustomUI.source_files  = 'Libs/CustomUI/*.{h,m}'
+    CustomUI.resources = 'Libs/CustomUI/*.png'
+  end
+  # ...
 end
