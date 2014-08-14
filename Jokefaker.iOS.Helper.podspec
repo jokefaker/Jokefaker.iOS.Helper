@@ -51,9 +51,10 @@ Pod::Spec.new do |s|
   # ...
   s.subspec 'Category' do |sct|
     sct.source_files  = 'Libs/Category/*.{h,m}'
-
-  s.subspec 'CustomUI' do |scu|
-    scu.source_files  = 'Libs/CustomUI/*.{h,m}'
-    scu.resources = 'Libs/CustomUI/*.png'
-
+  end
+  s.subspec 'CustomUI' do |sct|
+    sct.source_files  = 'Libs/CustomUI/*.{h,m}'
+    sct.resources = 'Libs/CustomUI/*.png'
+  end
+  # ...
 end
