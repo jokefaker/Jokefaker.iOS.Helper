@@ -49,13 +49,12 @@ Pod::Spec.new do |s|
   # ――― Project Settings ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   s.requires_arc = true
   # ...
-
-  s.subspec 'Category' do |Category|
-    Category.source_files  = 'Libs/Category/*.{h,m}'
+  s.subspec 'Category' do |sct|
+    sct.source_files  = 'Libs/Category/*.{h,m}'
   end
-  s.subspec 'CustomUI' do |CustomUI|
-    CustomUI.source_files  = 'Libs/CustomUI/*.{h,m}'
-    CustomUI.resources = 'Libs/CustomUI/*.png'
+  s.subspec 'CustomUI' do |scu|
+    scu.source_files  = 'Libs/CustomUI/*.{h,m}'
+    scu.resources = 'Libs/CustomUI/*.png'
   end
   # ...
 end
