@@ -39,7 +39,7 @@ Pod::Spec.new do |s|
 
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  s.resources = "Libs/*/*.png"
+  s.resources = "Libs/**/*.png"
 
   # ――― Project Linking ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   # s.frameworks = 'SomeFramework', 'AnotherFramework'
