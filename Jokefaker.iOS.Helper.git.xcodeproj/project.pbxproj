@@ -21,6 +21,13 @@
 		77171407199CB72F0013A67B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 771713E9199CB72F0013A67B /* UIKit.framework */; };
 		7717140F199CB72F0013A67B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7717140D199CB72F0013A67B /* InfoPlist.strings */; };
 		77171411199CB72F0013A67B /* Jokefaker_iOS_Helper_gitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 77171410199CB72F0013A67B /* Jokefaker_iOS_Helper_gitTests.m */; };
+		77171429199CB9D10013A67B /* NSArray+CC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7717141D199CB9D10013A67B /* NSArray+CC.m */; };
+		7717142A199CB9D10013A67B /* NSData+CC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7717141F199CB9D10013A67B /* NSData+CC.m */; };
+		7717142B199CB9D10013A67B /* NSDate+CC.m in Sources */ = {isa = PBXBuildFile; fileRef = 77171421199CB9D10013A67B /* NSDate+CC.m */; };
+		7717142C199CB9D10013A67B /* NSNumber+CC.m in Sources */ = {isa = PBXBuildFile; fileRef = 77171423199CB9D10013A67B /* NSNumber+CC.m */; };
+		7717142D199CB9D10013A67B /* NSString+CC.m in Sources */ = {isa = PBXBuildFile; fileRef = 77171425199CB9D10013A67B /* NSString+CC.m */; };
+		7717142E199CB9D10013A67B /* NSTimer+CC.m in Sources */ = {isa = PBXBuildFile; fileRef = 77171427199CB9D10013A67B /* NSTimer+CC.m */; };
+		77171430199CB9D90013A67B /* Jokefaker.iOS.Helper.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 7717142F199CB9D90013A67B /* Jokefaker.iOS.Helper.podspec */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +60,20 @@
 		7717140C199CB72F0013A67B /* Jokefaker.iOS.Helper.gitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Jokefaker.iOS.Helper.gitTests-Info.plist"; sourceTree = "<group>"; };
 		7717140E199CB72F0013A67B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		77171410199CB72F0013A67B /* Jokefaker_iOS_Helper_gitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Jokefaker_iOS_Helper_gitTests.m; sourceTree = "<group>"; };
+		7717141C199CB9D10013A67B /* NSArray+CC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+CC.h"; sourceTree = "<group>"; };
+		7717141D199CB9D10013A67B /* NSArray+CC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+CC.m"; sourceTree = "<group>"; };
+		7717141E199CB9D10013A67B /* NSData+CC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+CC.h"; sourceTree = "<group>"; };
+		7717141F199CB9D10013A67B /* NSData+CC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+CC.m"; sourceTree = "<group>"; };
+		77171420199CB9D10013A67B /* NSDate+CC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+CC.h"; sourceTree = "<group>"; };
+		77171421199CB9D10013A67B /* NSDate+CC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+CC.m"; sourceTree = "<group>"; };
+		77171422199CB9D10013A67B /* NSNumber+CC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+CC.h"; sourceTree = "<group>"; };
+		77171423199CB9D10013A67B /* NSNumber+CC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+CC.m"; sourceTree = "<group>"; };
+		77171424199CB9D10013A67B /* NSString+CC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CC.h"; sourceTree = "<group>"; };
+		77171425199CB9D10013A67B /* NSString+CC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+CC.m"; sourceTree = "<group>"; };
+		77171426199CB9D10013A67B /* NSTimer+CC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+CC.h"; sourceTree = "<group>"; };
+		77171427199CB9D10013A67B /* NSTimer+CC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+CC.m"; sourceTree = "<group>"; };
+		7717142F199CB9D90013A67B /* Jokefaker.iOS.Helper.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Jokefaker.iOS.Helper.podspec; sourceTree = "<group>"; };
+		77171431199CBC6E0013A67B /* CommonCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonCategory.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +138,8 @@
 				771713F7199CB72F0013A67B /* Main.storyboard */,
 				771713FA199CB72F0013A67B /* JFViewController.h */,
 				771713FB199CB72F0013A67B /* JFViewController.m */,
+				7717142F199CB9D90013A67B /* Jokefaker.iOS.Helper.podspec */,
+				7717141A199CB9D10013A67B /* Libs */,
 				771713FD199CB72F0013A67B /* Images.xcassets */,
 				771713EC199CB72F0013A67B /* Supporting Files */,
 			);
@@ -150,6 +173,42 @@
 				7717140D199CB72F0013A67B /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7717141A199CB9D10013A67B /* Libs */ = {
+			isa = PBXGroup;
+			children = (
+				7717141B199CB9D10013A67B /* Category */,
+				77171428199CB9D10013A67B /* CustomUI */,
+			);
+			path = Libs;
+			sourceTree = "<group>";
+		};
+		7717141B199CB9D10013A67B /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				7717141C199CB9D10013A67B /* NSArray+CC.h */,
+				7717141D199CB9D10013A67B /* NSArray+CC.m */,
+				7717141E199CB9D10013A67B /* NSData+CC.h */,
+				7717141F199CB9D10013A67B /* NSData+CC.m */,
+				77171420199CB9D10013A67B /* NSDate+CC.h */,
+				77171421199CB9D10013A67B /* NSDate+CC.m */,
+				77171422199CB9D10013A67B /* NSNumber+CC.h */,
+				77171423199CB9D10013A67B /* NSNumber+CC.m */,
+				77171424199CB9D10013A67B /* NSString+CC.h */,
+				77171425199CB9D10013A67B /* NSString+CC.m */,
+				77171426199CB9D10013A67B /* NSTimer+CC.h */,
+				77171427199CB9D10013A67B /* NSTimer+CC.m */,
+				77171431199CBC6E0013A67B /* CommonCategory.h */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		77171428199CB9D10013A67B /* CustomUI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CustomUI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,6 +289,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				771713FE199CB72F0013A67B /* Images.xcassets in Resources */,
+				77171430199CB9D90013A67B /* Jokefaker.iOS.Helper.podspec in Resources */,
 				771713F0199CB72F0013A67B /* InfoPlist.strings in Resources */,
 				771713F9199CB72F0013A67B /* Main.storyboard in Resources */,
 			);
@@ -250,8 +310,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7717142A199CB9D10013A67B /* NSData+CC.m in Sources */,
+				7717142D199CB9D10013A67B /* NSString+CC.m in Sources */,
+				77171429199CB9D10013A67B /* NSArray+CC.m in Sources */,
+				7717142E199CB9D10013A67B /* NSTimer+CC.m in Sources */,
 				771713F6199CB72F0013A67B /* JFAppDelegate.m in Sources */,
+				7717142C199CB9D10013A67B /* NSNumber+CC.m in Sources */,
 				771713FC199CB72F0013A67B /* JFViewController.m in Sources */,
+				7717142B199CB9D10013A67B /* NSDate+CC.m in Sources */,
 				771713F2199CB72F0013A67B /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -334,7 +400,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -366,7 +432,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
