@@ -31,7 +31,7 @@ Pod::Spec.new do |s|
 
 
   # ――― Source Location ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  s.source       = { :git => "https://github.com/jokefaker/Jokefaker.iOS.Helper.git",:tag => '0.0.6',:submodules => true}
+  s.source       = { :git => "https://github.com/jokefaker/Jokefaker.iOS.Helper.git",:tag => '0.0.7',:submodules => true}
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
