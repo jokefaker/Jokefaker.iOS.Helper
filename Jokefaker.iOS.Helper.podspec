@@ -1,5 +1,5 @@
 #
-#  Be sure to run `pod spec lint Jokefaker.iOS.Helper.podspec' to ensure this is a
+#  Be sure to run `pod spec lint JokeLib.podspec' to ensure this is a
 #  valid spec and to remove all comments including this before submitting the spec.
 #
 #  To learn more about Podspec attributes see http://docs.cocoapods.org/specification.html
@@ -15,31 +15,31 @@ Pod::Spec.new do |s|
   #  summary should be tweet-length, and the description more in depth.
   #
   s.name         = "Jokefaker.iOS.Helper"
-  s.version      = "0.0.1"
-  s.summary      = "Something helpful for iOS-Develope."
-  s.homepage     = "https://github.com/503315533/JokeLib.git"
+  s.version      = "0.0.2"
+  s.summary      = "Some Category And Custom UI."
+  s.homepage     = "https://github.com/jokefaker/Jokefaker.iOS.Helper.git"
 
   # ―――  Spec License  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   s.license      = 'MIT'
 
 
   # ――― Author Metadata  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  s.author       = { "Jokefaker" => "503315533@qq.com" }
+  s.author       = { "Jokefaker" => "jokefaker@gmail.com" }
 
   # ――― Platform Specifics ――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   s.ios.deployment_target = '6.0'
 
 
   # ――― Source Location ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  s.source       = { :git => "https://git.oschina.net/jokefaker/Whalefin.iOS.Helper.git", :tag => "0.0.4" }
+  s.source       = { :git => "https://github.com/jokefaker/Jokefaker.iOS.Helper.git"}
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  s.source_files  = '**/*.{h,m}'
+  s.source_files  = 'Libs/*/*.{h,m}'
 
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  s.resources = "**/*.png"
+  s.resources = "Libs/*/*.png"
 
   # ――― Project Linking ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   # s.frameworks = 'SomeFramework', 'AnotherFramework'
