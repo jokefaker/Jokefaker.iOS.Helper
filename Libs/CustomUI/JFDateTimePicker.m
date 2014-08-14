@@ -7,6 +7,7 @@
 //
 
 #import "JFDateTimePicker.h"
+#import "CommonCategory.h"
 
 @interface JFDateTimePicker ()<UIPickerViewDelegate,UIPickerViewDataSource>
 

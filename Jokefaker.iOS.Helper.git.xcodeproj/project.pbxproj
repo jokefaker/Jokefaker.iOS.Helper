@@ -22,7 +22,13 @@
 		7717140F199CB72F0013A67B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7717140D199CB72F0013A67B /* InfoPlist.strings */; };
 		77171411199CB72F0013A67B /* Jokefaker_iOS_Helper_gitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 77171410199CB72F0013A67B /* Jokefaker_iOS_Helper_gitTests.m */; };
 		77171436199CC1E50013A67B /* Jokefaker.iOS.Helper.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 77171435199CC1E50013A67B /* Jokefaker.iOS.Helper.podspec */; };
-		7717143B199CD3AD0013A67B /* Libs in Resources */ = {isa = PBXBuildFile; fileRef = 7717143A199CD3AD0013A67B /* Libs */; };
+		7717144E199CD5110013A67B /* NSArray+CC.m in Sources */ = {isa = PBXBuildFile; fileRef = 77171440199CD5110013A67B /* NSArray+CC.m */; };
+		7717144F199CD5110013A67B /* NSData+CC.m in Sources */ = {isa = PBXBuildFile; fileRef = 77171442199CD5110013A67B /* NSData+CC.m */; };
+		77171450199CD5110013A67B /* NSDate+CC.m in Sources */ = {isa = PBXBuildFile; fileRef = 77171444199CD5110013A67B /* NSDate+CC.m */; };
+		77171451199CD5110013A67B /* NSNumber+CC.m in Sources */ = {isa = PBXBuildFile; fileRef = 77171446199CD5110013A67B /* NSNumber+CC.m */; };
+		77171452199CD5110013A67B /* NSString+CC.m in Sources */ = {isa = PBXBuildFile; fileRef = 77171448199CD5110013A67B /* NSString+CC.m */; };
+		77171453199CD5110013A67B /* NSTimer+CC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7717144A199CD5110013A67B /* NSTimer+CC.m */; };
+		77171454199CD5110013A67B /* JFDateTimePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 7717144D199CD5110013A67B /* JFDateTimePicker.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,7 +62,21 @@
 		7717140E199CB72F0013A67B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		77171410199CB72F0013A67B /* Jokefaker_iOS_Helper_gitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Jokefaker_iOS_Helper_gitTests.m; sourceTree = "<group>"; };
 		77171435199CC1E50013A67B /* Jokefaker.iOS.Helper.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Jokefaker.iOS.Helper.podspec; sourceTree = "<group>"; };
-		7717143A199CD3AD0013A67B /* Libs */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Libs; sourceTree = "<group>"; };
+		7717143E199CD5110013A67B /* CommonCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonCategory.h; sourceTree = "<group>"; };
+		7717143F199CD5110013A67B /* NSArray+CC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+CC.h"; sourceTree = "<group>"; };
+		77171440199CD5110013A67B /* NSArray+CC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+CC.m"; sourceTree = "<group>"; };
+		77171441199CD5110013A67B /* NSData+CC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+CC.h"; sourceTree = "<group>"; };
+		77171442199CD5110013A67B /* NSData+CC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+CC.m"; sourceTree = "<group>"; };
+		77171443199CD5110013A67B /* NSDate+CC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+CC.h"; sourceTree = "<group>"; };
+		77171444199CD5110013A67B /* NSDate+CC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+CC.m"; sourceTree = "<group>"; };
+		77171445199CD5110013A67B /* NSNumber+CC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+CC.h"; sourceTree = "<group>"; };
+		77171446199CD5110013A67B /* NSNumber+CC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+CC.m"; sourceTree = "<group>"; };
+		77171447199CD5110013A67B /* NSString+CC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CC.h"; sourceTree = "<group>"; };
+		77171448199CD5110013A67B /* NSString+CC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+CC.m"; sourceTree = "<group>"; };
+		77171449199CD5110013A67B /* NSTimer+CC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+CC.h"; sourceTree = "<group>"; };
+		7717144A199CD5110013A67B /* NSTimer+CC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+CC.m"; sourceTree = "<group>"; };
+		7717144C199CD5110013A67B /* JFDateTimePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFDateTimePicker.h; sourceTree = "<group>"; };
+		7717144D199CD5110013A67B /* JFDateTimePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JFDateTimePicker.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,7 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				77171435199CC1E50013A67B /* Jokefaker.iOS.Helper.podspec */,
-				7717143A199CD3AD0013A67B /* Libs */,
+				7717143C199CD5110013A67B /* Libs */,
 				771713EB199CB72F0013A67B /* Jokefaker.iOS.Helper.git */,
 				7717140A199CB72F0013A67B /* Jokefaker.iOS.Helper.gitTests */,
 				771713E4199CB72F0013A67B /* Frameworks */,
@@ -156,6 +176,44 @@
 				7717140D199CB72F0013A67B /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7717143C199CD5110013A67B /* Libs */ = {
+			isa = PBXGroup;
+			children = (
+				7717143D199CD5110013A67B /* Category */,
+				7717144B199CD5110013A67B /* CustomUI */,
+			);
+			path = Libs;
+			sourceTree = "<group>";
+		};
+		7717143D199CD5110013A67B /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				7717143E199CD5110013A67B /* CommonCategory.h */,
+				7717143F199CD5110013A67B /* NSArray+CC.h */,
+				77171440199CD5110013A67B /* NSArray+CC.m */,
+				77171441199CD5110013A67B /* NSData+CC.h */,
+				77171442199CD5110013A67B /* NSData+CC.m */,
+				77171443199CD5110013A67B /* NSDate+CC.h */,
+				77171444199CD5110013A67B /* NSDate+CC.m */,
+				77171445199CD5110013A67B /* NSNumber+CC.h */,
+				77171446199CD5110013A67B /* NSNumber+CC.m */,
+				77171447199CD5110013A67B /* NSString+CC.h */,
+				77171448199CD5110013A67B /* NSString+CC.m */,
+				77171449199CD5110013A67B /* NSTimer+CC.h */,
+				7717144A199CD5110013A67B /* NSTimer+CC.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		7717144B199CD5110013A67B /* CustomUI */ = {
+			isa = PBXGroup;
+			children = (
+				7717144C199CD5110013A67B /* JFDateTimePicker.h */,
+				7717144D199CD5110013A67B /* JFDateTimePicker.m */,
+			);
+			path = CustomUI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,7 +296,6 @@
 				771713FE199CB72F0013A67B /* Images.xcassets in Resources */,
 				77171436199CC1E50013A67B /* Jokefaker.iOS.Helper.podspec in Resources */,
 				771713F0199CB72F0013A67B /* InfoPlist.strings in Resources */,
-				7717143B199CD3AD0013A67B /* Libs in Resources */,
 				771713F9199CB72F0013A67B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -258,8 +315,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77171454199CD5110013A67B /* JFDateTimePicker.m in Sources */,
+				7717144F199CD5110013A67B /* NSData+CC.m in Sources */,
+				77171452199CD5110013A67B /* NSString+CC.m in Sources */,
+				7717144E199CD5110013A67B /* NSArray+CC.m in Sources */,
+				77171453199CD5110013A67B /* NSTimer+CC.m in Sources */,
 				771713F6199CB72F0013A67B /* JFAppDelegate.m in Sources */,
+				77171451199CD5110013A67B /* NSNumber+CC.m in Sources */,
 				771713FC199CB72F0013A67B /* JFViewController.m in Sources */,
+				77171450199CD5110013A67B /* NSDate+CC.m in Sources */,
 				771713F2199CB72F0013A67B /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

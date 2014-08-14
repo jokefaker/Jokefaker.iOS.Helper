@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CommonCategory.h"
+#import "../Libs/Category/CommonCategory.h"
 
 @interface JFViewController : UIViewController
 
