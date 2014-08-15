@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
   #  summary should be tweet-length, and the description more in depth.
   #
   s.name         = "Jokefaker.iOS.Helper"
-  s.version      = "0.0.8"
+  s.version      = "0.0.9"
   s.summary      = "Some Category And Custom UI."
   s.homepage     = "https://github.com/jokefaker/Jokefaker.iOS.Helper.git"
 
@@ -31,7 +31,7 @@ Pod::Spec.new do |s|
 
 
   # ――― Source Location ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  s.source       = { :git => "https://github.com/jokefaker/Jokefaker.iOS.Helper.git",:tag => '0.0.8',:submodules => true}
+  s.source       = { :git => "https://github.com/jokefaker/Jokefaker.iOS.Helper.git",:tag => '0.0.9',:submodules => true}
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -55,6 +55,9 @@ Pod::Spec.new do |s|
   s.subspec 'CustomUI' do |sct|
     sct.source_files  = 'Libs/CustomUI/*.{h,m}'
     sct.resources = 'Libs/CustomUI/*.png'
+  end
+    s.subspec 'CoreData' do |sct|
+    sct.source_files  = 'Libs/CoreData/*.{h,m}'
   end
   # ...
 end
