@@ -15,6 +15,6 @@
 #import "NSNumber+CC.h"
 #import "NSTimer+CC.h"
 #import "NSArray+CC.h"
-
+#import "JSONCategory.h"
 
 #endif
