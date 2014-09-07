@@ -453,9 +453,9 @@
         default:
             break;
     }
-    pickerLabel.text = [NSString stringWithFormat:@"%@%@",array[row],unit];
-    return pickerLabel;
-}
+    NSInteger select = array.count > row ? row : array.count-1;
+    pickerLabel.text = [NSString stringWithFormat:@"%@%@",array[select],unit];
+    return pickerLabel;}
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
 {
