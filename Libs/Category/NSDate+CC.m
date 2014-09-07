@@ -115,14 +115,14 @@
 {
 	NSTimeInterval aTimeInterval = [[NSDate date] timeIntervalSinceReferenceDate] + D_WEEK;
 	NSDate *newDate = [NSDate dateWithTimeIntervalSinceReferenceDate:aTimeInterval];
-	return [self isSameYearAsDate:newDate];
+	return [self isSameWeekAsDate:newDate];
 }
 
 - (BOOL) isLastWeek
 {
 	NSTimeInterval aTimeInterval = [[NSDate date] timeIntervalSinceReferenceDate] - D_WEEK;
 	NSDate *newDate = [NSDate dateWithTimeIntervalSinceReferenceDate:aTimeInterval];
-	return [self isSameYearAsDate:newDate];
+	return [self isSameWeekAsDate:newDate];
 }
 
 - (BOOL) isSameYearAsDate: (NSDate *) aDate
@@ -134,7 +134,7 @@
 
 - (BOOL) isThisYear
 {
-	return [self isSameWeekAsDate:[NSDate date]];
+	return [self isSameYearAsDate:[NSDate date]];
 }
 
 - (BOOL) isNextYear
