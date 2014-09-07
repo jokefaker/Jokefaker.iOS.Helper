@@ -17,7 +17,6 @@ static const NSString *kFinishBlockKey = @"UIImagePickerControllerBlockKey";
     UIImagePickerController *imagePicker = [[UIImagePickerController alloc]init];
     imagePicker.finishBlock = finishBlock;
     imagePicker.allowsEditing = YES;
-    NSLog(@"here ok");
     return imagePicker;
 }
 
