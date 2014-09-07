@@ -23,8 +23,7 @@ static bool isFirstAccess = YES;
 - (NSString *)dataModelName
 {
     if (!_dataModelName) {
-        NSDictionary *infDic = [[NSBundle mainBundle] infoDictionary];
-        _dataModelName = [infDic objectForKey:@"CFBundleDisplayName"];
+        _dataModelName = self.sqliteName;
     }
     return _dataModelName;
 }

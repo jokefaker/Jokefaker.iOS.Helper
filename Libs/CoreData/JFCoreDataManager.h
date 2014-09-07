@@ -13,8 +13,8 @@
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 
-@property (strong, nonatomic) NSString *sqliteName;
-@property (strong, nonatomic) NSString *dataModelName;
+@property (strong, nonatomic) NSString *sqliteName;     // 要存储的sqlite文件的名字，默认为CFBundleDisplayName
+@property (strong, nonatomic) NSString *dataModelName;  // 工程中建立的coredata可视化文件的名字，默认为sqliteName
 
 /**
  * 获得CoreDataManager的单例
