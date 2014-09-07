@@ -20,6 +20,15 @@ static bool isFirstAccess = YES;
 
 #pragma mark - Core Data stack
 
+- (NSString *)dataModelName
+{
+    if (!_dataModelName) {
+        NSDictionary *infDic = [[NSBundle mainBundle] infoDictionary];
+        _dataModelName = [infDic objectForKey:@"CFBundleDisplayName"];
+    }
+    return _dataModelName;
+}
+
 - (NSString *)sqliteName
 {
     if (!_sqliteName) {
@@ -44,7 +53,7 @@ static bool isFirstAccess = YES;
     
     if (!_managedObjectModel) {
         
-        NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"FMS" withExtension:@"momd"];
+        NSURL *modelURL = [[NSBundle mainBundle] URLForResource:self.dataModelName withExtension:@"momd"];
         _managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
     }
 

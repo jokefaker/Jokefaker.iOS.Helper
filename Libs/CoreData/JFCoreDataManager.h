@@ -14,6 +14,7 @@
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 
 @property (strong, nonatomic) NSString *sqliteName;
+@property (strong, nonatomic) NSString *dataModelName;
 
 /**
  * 获得CoreDataManager的单例
