@@ -71,7 +71,7 @@
     if (!dictionary) {
         return;
     }
-    
+    // 属性转换
     NSDictionary *attributes = [[self entity] attributesByName];
     for (NSString *attribute in attributes) {
         
@@ -113,7 +113,7 @@
             
             value = [value dateWithFormate:[[self class]dateFormat]];
         }
-        // TODO:在这里支持内嵌对象的解析
+        // 自定义类型，暂时用不到
         else if ((attributeType == NSTransformableAttributeType) && ([value isKindOfClass:[NSDictionary class]])) {
             
 //            value = value;
@@ -125,6 +125,42 @@
         }
         
         [self setValue:value forKey:attribute];
+    }
+    NSDictionary *relationships = [[self entity] relationshipsByName];
+    for (NSString *relationshipName in relationships.allKeys){
+        
+        NSRelationshipDescription *rel = relationships[relationshipName];
+        NSEntityDescription *subEntityeDes = rel.destinationEntity;
+        NSString *className = [subEntityeDes managedObjectClassName];
+        Class entityClass = NSClassFromString(className);
+        
+        id value = [dictionary objectForKey:relationshipName];
+        // 一对一关系的处理
+        if (![rel isToMany]) {
+            // key值不是字典，直接继续循环
+            if (![value isKindOfClass:[NSDictionary class]]) {
+                continue;
+            }
+            // key值已经存在，说明已经设置过，所以无需转换
+            if ([self valueForKey:relationshipName]) {
+                continue;
+            }
+            JFBaseManagedObject *childObject = [entityClass entityFromDictionary:value InContext:self.managedObjectContext];
+            [self setValue:childObject forKey:relationshipName];
+            continue;
+        }
+        // 一对多关系的处理
+        if (![value isKindOfClass:[NSArray class]]) {
+            continue;
+        }
+        NSMutableSet *relationshipSet = [self mutableSetValueForKey:relationshipName];
+        // key值已经存在，说明应该已经转换过，所以无需转换
+        // 已经存在关系，说明已经设置过直接继续
+        if (relationshipSet.count > 0) {
+            continue;
+        }
+        NSArray *subEntities = [entityClass entitiesFromDictionaries:value InContext:self.managedObjectContext];
+        [relationshipSet addObjectsFromArray:subEntities];
     }
 }
 
@@ -198,6 +234,7 @@
             }
             continue;
         }
+        // 是否Ordered的判断，主要是mutableOrderedSetValueForKey和mutableSetValueForKey的区别
         if ([rel isOrdered]) {
             NSMutableOrderedSet *sourceSet = [self mutableOrderedSetValueForKey:keyName];
             NSMutableOrderedSet *clonedSet = [cloned mutableOrderedSetValueForKey:keyName];
@@ -208,7 +245,7 @@
                 // Clone it, and add clone to set
                 JFBaseManagedObject *clonedRelatedObject = [relatedObject cloneToContext:context withCopiedCache:alreadyCopied exludeEntities:namesOfEntitiesToExclude];
                 
-                if (clonedRelatedObject != nil) {
+                if (clonedRelatedObject) {
                     [clonedSet addObject:clonedRelatedObject];
                 }
             }
@@ -217,11 +254,12 @@
             NSMutableSet *sourceSet = [self mutableSetValueForKey:keyName];
             NSMutableSet *clonedSet = [cloned mutableSetValueForKey:keyName];
             NSEnumerator *e = [sourceSet objectEnumerator];
+            
             JFBaseManagedObject *relatedObject = nil;
             while ( relatedObject = [e nextObject]){
                 // 子对象进行克隆
                 JFBaseManagedObject *clonedRelatedObject = [relatedObject cloneToContext:context withCopiedCache:alreadyCopied exludeEntities:namesOfEntitiesToExclude];
-                NSLog(@"cloned des = %@",clonedRelatedObject.description);
+
                 if (clonedRelatedObject) {
                     [clonedSet addObject:clonedRelatedObject];
                 }
