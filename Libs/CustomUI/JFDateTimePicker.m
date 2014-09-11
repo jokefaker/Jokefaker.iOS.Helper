@@ -94,9 +94,9 @@
         if (self.minimumDate) {
             minYear = self.minimumDate.year;
         }
-        for (int i = minYear; i <= maxYear ; i++)
+        for (NSInteger i = minYear; i <= maxYear ; i++)
         {
-            [array addObject:[NSString stringWithFormat:@"%d",i]];
+            [array addObject:[NSString stringWithFormat:@"%ld",(long)i]];
         }
         _years = [NSArray arrayWithArray:array];
     }
@@ -110,17 +110,17 @@
     // 最后一年
     if (self.maximumDate && self.selectedYear.integerValue == self.maximumDate.year) {
         for (NSInteger i = 1; i <= self.maximumDate.month; i++) {
-            [array addObject:[NSString stringWithFormat:@"%d",i]];
+            [array addObject:[NSString stringWithFormat:@"%ld",(long)i]];
         }
     }
     // 第一年
     else if (self.minimumDate && self.selectedYear.integerValue == self.minimumDate.year){
         for (NSInteger i = self.minimumDate.month; i <= 12; i++) {
-            [array addObject:[NSString stringWithFormat:@"%d",i]];
+            [array addObject:[NSString stringWithFormat:@"%ld",(long)i]];
         }
     }else{
         for (NSInteger i = 1; i <= 12; i++) {
-            [array addObject:[NSString stringWithFormat:@"%d",i]];
+            [array addObject:[NSString stringWithFormat:@"%ld",(long)i]];
         }
     }
     _months = [NSArray arrayWithArray:array];
@@ -136,7 +136,7 @@
         self.selectedYear.integerValue == self.maximumDate.year &&
         self.selectedMonth.integerValue == self.maximumDate.month) {
         for (NSInteger i = 1; i <= self.maximumDate.day; i++) {
-            [array addObject:[NSString stringWithFormat:@"%02d",i]];
+            [array addObject:[NSString stringWithFormat:@"%02ld",(long)i]];
         }
     }
     // 第一年第一个月
@@ -144,11 +144,11 @@
              self.selectedYear.integerValue == self.minimumDate.year &&
              self.selectedMonth.integerValue == self.minimumDate.month){
         for (NSInteger i = self.minimumDate.day; i <= count; i++) {
-            [array addObject:[NSString stringWithFormat:@"%02d",i]];
+            [array addObject:[NSString stringWithFormat:@"%02ld",(long)i]];
         }
     }else{
         for (NSInteger i = 1; i <= count; i++) {
-            [array addObject:[NSString stringWithFormat:@"%02d",i]];
+            [array addObject:[NSString stringWithFormat:@"%02ld",(long)i]];
         }
     }
     _days = [NSArray arrayWithArray:array];
@@ -164,7 +164,7 @@
         self.selectedMonth.integerValue == self.maximumDate.month &&
         self.selectedDay.integerValue == self.maximumDate.day) {
         for (NSInteger i = 0; i <= self.maximumDate.hour; i++) {
-            [array addObject:[NSString stringWithFormat:@"%02d",i]];
+            [array addObject:[NSString stringWithFormat:@"%02ld",(long)i]];
         }
     }
     // 第一年第一个月第一天
@@ -173,11 +173,11 @@
              self.selectedMonth.integerValue == self.minimumDate.month &&
              self.selectedDay.integerValue == self.minimumDate.day){
         for (NSInteger i = self.minimumDate.hour; i <= 23; i++) {
-            [array addObject:[NSString stringWithFormat:@"%02d",i]];
+            [array addObject:[NSString stringWithFormat:@"%02ld",(long)i]];
         }
     }else{
         for (NSInteger i = 0; i <= 23; i++) {
-            [array addObject:[NSString stringWithFormat:@"%02d",i]];
+            [array addObject:[NSString stringWithFormat:@"%02ld",(long)i]];
         }
     }
     _hours = [NSArray arrayWithArray:array];
@@ -195,7 +195,7 @@
         self.selectedHour.integerValue == self.maximumDate.hour) {
         for (NSInteger i = 0; i <= self.maximumDate.minute; i++)
         {
-            [array addObject:[NSString stringWithFormat:@"%02d",i]];
+            [array addObject:[NSString stringWithFormat:@"%02ld",(long)i]];
         }
     }
     // 第一年第一个月第一天第一个小时
@@ -206,12 +206,12 @@
              self.selectedHour.integerValue == self.minimumDate.hour){
         for (NSInteger i = self.minimumDate.minute; i <= 59; i++)
         {
-            [array addObject:[NSString stringWithFormat:@"%02d",i]];
+            [array addObject:[NSString stringWithFormat:@"%02ld",(long)i]];
         }
     }else{
         for (NSInteger i = 0; i <= 59; i++)
         {
-            [array addObject:[NSString stringWithFormat:@"%02d",i]];
+            [array addObject:[NSString stringWithFormat:@"%02ld",(long)i]];
         }
     }
     _minutes = [NSArray arrayWithArray:array];
@@ -225,7 +225,7 @@
         NSMutableArray *array = [NSMutableArray array];
         for (int i = 0; i < 60; i++)
         {
-            [array addObject:[NSString stringWithFormat:@"%02d",i]];
+            [array addObject:[NSString stringWithFormat:@"%02ld",(long)i]];
         }
         _seconds = [NSArray arrayWithArray:array];
     }
@@ -356,12 +356,12 @@
         return;
     }
     self.animate = animated;
-    self.selectedYear = [NSString stringWithFormat:@"%d",date.year];
-    self.selectedMonth = [NSString stringWithFormat:@"%d",date.month];
-    self.selectedDay = [NSString stringWithFormat:@"%02d",date.day];
+    self.selectedYear = [NSString stringWithFormat:@"%ld",(long)date.year];
+    self.selectedMonth = [NSString stringWithFormat:@"%ld",(long)date.month];
+    self.selectedDay = [NSString stringWithFormat:@"%02ld",(long)date.day];
     if (self.dateTimePickerMode == JFDateTimePickerModeDateAndTime) {
-        self.selectedHour = [NSString stringWithFormat:@"%02d",date.hour];
-        self.selectedMinute = [NSString stringWithFormat:@"%02d",date.minute];
+        self.selectedHour = [NSString stringWithFormat:@"%02ld",(long)date.hour];
+        self.selectedMinute = [NSString stringWithFormat:@"%02ld",(long)date.minute];
     }
 }
 

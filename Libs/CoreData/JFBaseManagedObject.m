@@ -81,10 +81,7 @@
     for (NSString *attribute in attributes) {
         
         // 如果有keymapper就转换一下
-        NSString *dictionaryKey = attribute;
-        if ([[self class] keyMapper]) {
-            dictionaryKey = [[[self class] keyMapper] objectForKey:attribute];
-        }
+        NSString *dictionaryKey = [[[self class] keyMapper] objectForKey:attribute]?[[[self class] keyMapper] objectForKey:attribute]:attribute;
         
         id value = [dictionary objectForKey:dictionaryKey];
         if (value == nil) {
@@ -146,10 +143,7 @@
         Class entityClass = NSClassFromString(className);
         
         // 如果有keymapper就转换一下
-        NSString *dictionaryKey = relationshipName;
-        if ([[self class] keyMapper]) {
-            dictionaryKey = [[[self class] keyMapper] objectForKey:relationshipName];
-        }
+        NSString *dictionaryKey = [[[self class] keyMapper] objectForKey:relationshipName]?[[[self class] keyMapper] objectForKey:relationshipName]:relationshipName;
         
         id value = [dictionary objectForKey:dictionaryKey];
         // 一对一关系的处理
