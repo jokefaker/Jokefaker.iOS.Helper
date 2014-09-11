@@ -11,6 +11,10 @@
 
 @interface JFBaseManagedObject : NSManagedObject
 
+#pragma mark - Properties
+
+@property (strong, nonatomic, readonly) NSDictionary *dictionaryValue;
+
 #pragma mark - Helper
 
 /**
@@ -72,6 +76,7 @@
  */
 - (void)setManagedValuesForKeysWithDictionary:(NSDictionary *)dictionary;
 
+
 #pragma mark - Clone
 
 /**
@@ -99,5 +104,6 @@
  *  @return 克隆后的对象
  */
 - (instancetype)cloneToContext:(NSManagedObjectContext *)context exludeEntities:(NSMutableArray *)namesOfEntitiesToExclude;
+
 
 @end
