@@ -34,6 +34,11 @@
 
 #pragma mark - Dictionary To Model
 
++ (NSDictionary *)keyMapper
+{
+    return nil;
+}
+
 + (instancetype)entityFromDictionary:(NSDictionary *)dictionary InContext:(NSManagedObjectContext *)context
 {
     // 异常参数判断
@@ -75,7 +80,13 @@
     NSDictionary *attributes = [[self entity] attributesByName];
     for (NSString *attribute in attributes) {
         
-        id value = [dictionary objectForKey:attribute];
+        // 如果有keymapper就转换一下
+        NSString *dictionaryKey = attribute;
+        if ([[self class] keyMapper]) {
+            dictionaryKey = [[[self class] keyMapper] objectForKey:attribute];
+        }
+        
+        id value = [dictionary objectForKey:dictionaryKey];
         if (value == nil) {
             continue;
         }
@@ -134,7 +145,13 @@
         NSString *className = [subEntityeDes managedObjectClassName];
         Class entityClass = NSClassFromString(className);
         
-        id value = [dictionary objectForKey:relationshipName];
+        // 如果有keymapper就转换一下
+        NSString *dictionaryKey = relationshipName;
+        if ([[self class] keyMapper]) {
+            dictionaryKey = [[[self class] keyMapper] objectForKey:relationshipName];
+        }
+        
+        id value = [dictionary objectForKey:dictionaryKey];
         // 一对一关系的处理
         if (![rel isToMany]) {
             // key值不是字典，直接继续循环

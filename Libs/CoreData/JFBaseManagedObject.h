@@ -39,6 +39,13 @@
 #pragma mark - Dictionary To Model
 
 /**
+ *  字典到对象的映射关系
+ *
+ *  @return 字典，value为原字典的字段名称，key为对象的字段名称
+ */
++ (NSDictionary *)keyMapper;
+
+/**
  *  字典转coredata对象
  *
  *  @param dictionary 字典
