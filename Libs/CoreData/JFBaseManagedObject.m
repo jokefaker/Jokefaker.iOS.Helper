@@ -9,52 +9,17 @@
 #import "JFBaseManagedObject.h"
 
 @implementation JFBaseManagedObject
+@synthesize dictionaryValue = _dictionaryValue;
 
 #pragma mark - Properties
 
 - (NSDictionary *)dictionaryValue
 {
-    NSMutableDictionary *dictionary = [NSMutableDictionary new];
-
-    // 属性转换
-    NSDictionary *attributes = [[self entity] attributesByName];
-    for (NSString *attribute in attributes) {
-        
-        // 如果有keymapper就转换一下
-        NSString *dictionaryKey = [[[self class] keyMapper] objectForKey:attribute]?[[[self class] keyMapper] objectForKey:attribute]:attribute;
-        id value = [self valueForKey:attribute];
-        if (value) {
-            [dictionary setObject:value forKey:dictionaryKey];
-        }
+    if (!_dictionaryValue) {
+        NSMutableDictionary *cache = [NSMutableDictionary new];
+        _dictionaryValue = [self getDictionaryValueWithConvertedCache:&cache];
     }
-    // 关系转换
-    NSDictionary *relationships = [[self entity] relationshipsByName];
-    for (NSString *relationshipName in relationships.allKeys){
-        
-        NSRelationshipDescription *rel = relationships[relationshipName];
-        NSEntityDescription *subEntityeDes = rel.destinationEntity;
-        
-        // 如果有keymapper就转换一下
-        NSString *dictionaryKey = [[[self class] keyMapper] objectForKey:relationshipName]?[[[self class] keyMapper] objectForKey:relationshipName]:relationshipName;
-        
-        JFBaseManagedObject *value = (JFBaseManagedObject *)subEntityeDes.managedObjectModel;
-        
-        // 一对一关系的处理
-        if (![rel isToMany]) {
-            [dictionary setObject:value forKey:dictionaryKey];
-            continue;
-        }
-        NSArray *array = [self mutableSetValueForKey:relationshipName].allObjects;
-        // key值已经存在，说明应该已经转换过，所以无需转换
-        if (![dictionary objectForKey:dictionaryKey]) {
-            NSMutableArray *tempArray = [NSMutableArray new];
-            for (JFBaseManagedObject *obj in array) {
-                [tempArray addObject:obj.dictionaryValue];
-            }
-            [dictionary setObject:[NSArray arrayWithArray:tempArray] forKey:dictionaryKey];
-        }
-    }
-    return dictionary;
+    return _dictionaryValue;
 }
 
 #pragma mark - Helper
@@ -77,6 +42,78 @@
     }
     return [NSEntityDescription insertNewObjectForEntityForName:[self entityName]
                                          inManagedObjectContext:context];
+}
+
+#pragma mark - Model To Dictionary
+
+/**
+ *  获取转换后的字典
+ *
+ *  @param alreadyConverted 存储
+ *
+ *  @return 转换后的字典
+ */
+- (NSDictionary *)getDictionaryValueWithConvertedCache:(NSMutableDictionary **)alreadyConverted
+{
+    JFBaseManagedObject *converted = nil;
+    if (alreadyConverted == NULL) {
+        NSLog(@"alreadyConverted array is null");
+        return nil;
+    }
+    converted = [*alreadyConverted objectForKey:[self objectID]];
+    // 如果已经转换过了那就直接返回，主要为了防止 父类<->子类的循环转换
+    if (converted){
+        return nil;
+    }
+    // 记录已经拷贝过的实体
+    [*alreadyConverted setObject:self forKey:[self objectID]];
+
+    // 开始转换
+    NSMutableDictionary *dictionary = [NSMutableDictionary new];
+    // 属性转换
+    NSDictionary *attributes = [[self entity] attributesByName];
+    for (NSString *attribute in attributes) {
+        
+        // 如果有keymapper就转换一下
+        NSString *dictionaryKey = [[[self class] keyMapper] objectForKey:attribute]?[[[self class] keyMapper] objectForKey:attribute]:attribute;
+        id value = [self valueForKey:attribute];
+        if (value) {
+            [dictionary setObject:value forKey:dictionaryKey];
+        }
+    }
+    // 关系转换
+    NSDictionary *relationships = [[self entity] relationshipsByName];
+    for (NSString *relationshipName in relationships.allKeys){
+        
+        NSRelationshipDescription *rel = relationships[relationshipName];
+        //        NSEntityDescription *subEntityeDes = rel.destinationEntity;
+        
+        // 如果有keymapper就转换一下
+        NSString *dictionaryKey = [[[self class] keyMapper] objectForKey:relationshipName]?[[[self class] keyMapper] objectForKey:relationshipName]:relationshipName;
+        
+        JFBaseManagedObject *value = [self valueForKey:dictionaryKey];
+        // 一对一关系的处理
+        if (![rel isToMany]) {
+            NSDictionary *dic = [value getDictionaryValueWithConvertedCache:alreadyConverted];
+            if (dic) {
+                [dictionary setObject:dic forKey:dictionaryKey];
+            }
+            continue;
+        }
+        NSArray *array = [self mutableSetValueForKey:relationshipName].allObjects;
+        // key值已经存在，说明应该已经转换过，所以无需转换
+        if (![dictionary objectForKey:dictionaryKey]) {
+            NSMutableArray *tempArray = [NSMutableArray new];
+            for (JFBaseManagedObject *obj in array) {
+                NSDictionary *dic = [obj getDictionaryValueWithConvertedCache:alreadyConverted];
+                if (dic) {
+                    [tempArray addObject:dic];
+                }
+            }
+            [dictionary setObject:[NSArray arrayWithArray:tempArray] forKey:dictionaryKey];
+        }
+    }
+    return dictionary;
 }
 
 #pragma mark - Dictionary To Model
