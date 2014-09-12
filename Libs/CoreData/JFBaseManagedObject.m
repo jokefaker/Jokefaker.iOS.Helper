@@ -277,6 +277,15 @@
     return [self cloneToContext:context withCopiedCache:&dictionary exludeEntities:namesOfEntitiesToExclude];
 }
 
+/**
+ *  拷贝自身到指定context
+ *
+ *  @param context                  指定coredata context
+ *  @param alreadyCopied            已经拷贝过的对象
+ *  @param namesOfEntitiesToExclude 需要忽略的对象
+ *
+ *  @return 实例对象
+ */
 - (instancetype)cloneToContext:(NSManagedObjectContext *)context
                withCopiedCache:(NSMutableDictionary **)alreadyCopied
                 exludeEntities:(NSMutableArray *)namesOfEntitiesToExclude

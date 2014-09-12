@@ -99,7 +99,7 @@
  *  在指定上下文克隆自身，但是去除某些实体
  *
  *  @param context                  指定上下文
- *  @param namesOfEntitiesToExclude 需要去除的实体
+ *  @param namesOfEntitiesToExclude 需要去除的实体名称
  *
  *  @return 克隆后的对象
  */
