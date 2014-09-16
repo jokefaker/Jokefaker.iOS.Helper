@@ -14,6 +14,8 @@
 #define D_WEEK		604800
 #define D_YEAR		31556926
 
+#define DEFAULT_DATE_FORMATE @"yyyy-MM-dd HH:mm:ss"
+
 @interface NSDate (CC)
 
 // Relative dates from the current date
